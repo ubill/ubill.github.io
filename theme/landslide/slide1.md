@@ -6,7 +6,7 @@
 
 Generate HTML5 slideshows from markdown, ReST, or textile.
 
-![python](http://i.imgur.com/bc2xk.png)
+![spaghetti](/theme/slides/secondslides/images/spaghetti.jpg)
 
 Landslide is primarily written in Python, but it's themes use:
 
