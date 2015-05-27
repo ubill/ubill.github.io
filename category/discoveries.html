@@ -2,7 +2,7 @@
 <html lang="en"
 >
 <head>
-    <title>Inline Slides - Ubill's Blog</title>
+    <title>Discoveries - Ubill's Blog</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,19 +10,16 @@
 
 
 
-<link rel="canonical" href="/inline-slides.html">
 
-        <meta name="author" content="Ubill" />
-        <meta name="description" content="At this moment, I&#39;m trying to make iframes, inline slides, and Pelican work together. And what better than to use this page itself for that purpose, and in conjunction with StackEdit? Hint: for now, in the iframe tag, use root-relative src URLs, like so: src=&#34;/theme/slides/...html&#34; (note ..." />
+    <meta name="author" content="Ubill" />
+    <meta name="keywords" content="Discoveries" />
 
+    <!-- Open Graph tags -->
         <meta property="og:site_name" content="Ubill's Blog" />
-        <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Inline Slides"/>
-        <meta property="og:url" content="/inline-slides.html"/>
-        <meta property="og:description" content="At this moment, I&#39;m trying to make iframes, inline slides, and Pelican work together. And what better than to use this page itself for that purpose, and in conjunction with StackEdit? Hint: for now, in the iframe tag, use root-relative src URLs, like so: src=&#34;/theme/slides/...html&#34; (note ..."/>
-        <meta property="article:published_time" content="2015-05-26" />
-            <meta property="article:section" content="Tools" />
-            <meta property="article:author" content="Ubill" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Ubill's Blog"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="Ubill's Blog"/>
 
 
     <!-- Bootstrap -->
@@ -50,13 +47,13 @@ Ubill's Blog            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="/category/discoveries.html">Discoveries</a>
                         </li>
                         <li >
                             <a href="/category/personal.html">Personal</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="/category/tools.html">Tools</a>
                         </li>
             </ul>
@@ -73,58 +70,22 @@ Ubill's Blog            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="/inline-slides.html"
-                       rel="bookmark"
-                       title="Permalink to Inline Slides">
-                        Inline Slides
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-05-26T08:56:00+08:00"> Tue 26 May 2015</time>
-    </span>
+            <article>
+                <h2><a href="/how-to-know-if-a-request-is-made-to-a-certain-host.html">How To Know If A Request Is Made To A Certain Host?</a></h2>
+                <div class="summary"><p>Right, so this came up at work today.</p>
+<p>The scenario was, let's say I want to know if an action
+causes a request to be sent to a certain remote host,
+let's say <code>abc.com</code>.</p>
+<p>Here's how to do it:</p>
+<div class="highlight"><pre><span class="n">ping</span> <span class="n">abc</span><span class="p">.</span><span class="n">com</span>
+</pre></div>
 
 
-
-    
-</footer><!-- /.post-info -->                    </div>
+<p>to get the IP ...</p>
+                    <a class="btn btn-default btn-xs" href="/how-to-know-if-a-request-is-made-to-a-certain-host.html">more ...</a>
                 </div>
-                <p>At this moment, I'm trying to make iframes, inline slides, and Pelican work
-together.</p>
-<p><em>And what better than to use this page itself for that purpose, and in conjunction with StackEdit?</em></p>
-<iframe class="frame" width="700" height="600" style="display: block; margin: 0 auto;" src="/theme/slides/ub_iframe_embedder.html#dzslides-introduction.html">
-</iframe>
-
-<h3>Hint: for now, in the iframe tag, use <strong>root-relative</strong> src URLs,</h3>
-<blockquote>
-<p>like so: <code>src="/theme/slides/...html"</code> (note the <strong>leading slash.</strong>)</p>
-</blockquote>
-<h4>Success!</h4>
-<p>Click into the slides area and use left/right arrow keys to navigate.
-On mobile browsers, it works out of the box if you swipe left and right in that
-area.</p>
-<p>No real fully-automated way for me at the moment though, I generate the slides
-and put them in the <code>themes</code> (i.e. static folder of the Pelican theme)
-and use a raw HTML <code>iframe</code> element in my Markdown post pointing to the slides
-just like any other static resource...</p>
-<p>But oh well, it was easier than I expected (once I got down to trying it) and
-gives me the basic minimum functionality that I want.
-To improve on it as time goes by, and discover things by <strong>doing</strong> as we go along.</p>
-<p>(For the original front page, I have made it into a static page, you can see
-it  <a href="http://ubill.github.io/intro-post.html">here</a>.)</p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
+            </article>
+            <hr/>
 
         </div>
         <div class="col-sm-3" id="sidebar">
