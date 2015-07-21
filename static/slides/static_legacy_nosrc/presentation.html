@@ -1,84 +1,94 @@
 <!DOCTYPE html>
-<!-- saved from url=(0057)http://paulrouget.com/slides/dzslides-introduction.html#1 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8">
-<!-- Your Slides -->
-<!-- One section is one slide -->
-</head><body class="loaded" style="-webkit-transform: scale(0.875); transform: scale(0.875);">
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Landslide</title>
+    <!-- Styles -->
+
+
+    <link rel="stylesheet" media="print" href="../theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="../theme/css/screen.css">
 
 
 
-<section id="in-the-morning" class="titleslide slide level1"><h1>In the morning</h1></section><section id="getting-up" class="slide level2">
-<h1>Getting up</h1>
-<ul>
-<li>Turn off alarm</li>
-<li>Get out of bed</li>
-<li>Producing slide shows with Pandoc:</li>
-<li>http://pandoc.org/demo/example9/producing-slide-shows-with-pandoc.html</li>
-</ul>
-</section><section id="breakfast" class="slide level2">
-<h1>Breakfast</h1>
-<ul>
-<li>Eat eggs</li>
-<li>Drink coffee</li>
-</ul>
+    <!-- /Styles -->
+    <!-- Javascripts -->
+
+    <script type="text/javascript" src="../theme/js/slides.js"></script>
+
+
+
+    <!-- /Javascripts -->
+</head>
+<body class="loaded" style="-webkit-transform: scale(0.875); transform: scale(0.875);">
+
+
+
+
+
+<section class="slide level2">
+
+        <h1>Landslide</h1>
+
+
 </section>
-<section id="in-the-evening" class="titleslide slide level1"><h1>In the evening</h1></section><section id="adding-some-source-code-here.-haskell" class="slide level2">
-<h1>Adding some source code here. (Haskell)</h1>
-<table class="sourceCode haskell numberLines" id="mycode" startFrom="100"><tr class="sourceCode"><td class="lineNumbers"><pre>100
-101
-102
-</pre></td><td class="sourceCode"><pre><code class="sourceCode haskell">qsort []     <span class="fu">=</span> []
-qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<span class="fu">&lt;</span> x) xs) <span class="fu">++</span> [x] <span class="fu">++</span>
-               qsort (filter (<span class="fu">&gt;=</span> x) xs)</code></pre></td></tr></table>
-</section><section id="moar-code.-javascript" class="slide level2">
-<h1>Moar code. (Javascript)</h1>
-<table class="sourceCode javascript numberLines" id="mycode"><tr class="sourceCode"><td class="lineNumbers"><pre>1
+
+<section class="slide level2">
+
+        <h1>Overview</h1>
+
+
+        <p>Generate HTML5 slideshows from markdown, ReST, or textile.</p>
+<p><img alt="spaghetti" src="/static/slides/images/spaghetti.jpg" /></p>
+<p>Landslide is primarily written in Python, but it's themes use:</p>
+<ul>
+<li>HTML5</li>
+<li>Javascript</li>
+<li>CSS</li>
+</ul>
+
+</section>
+
+<section class="slide level2">
+
+        <h1>Code Sample</h1>
+
+
+        <p>Landslide supports code snippets</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="sourceCode"><pre><code class="sourceCode javascript"><span class="kw">for</span> (<span class="kw">var</span> i=<span class="dv">0</span>; i &lt; <span class="ot">data</span>.<span class="fu">length</span>; i++) {
-  totalTemperature = <span class="dv">0</span>;
+6</pre></div></td><td class="code"><div class="highlight"><pre><span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s">&#39;notice&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">u&quot;Invalid logger set, must be a callable&quot;</span><span class="p">)</span>
 
-  <span class="kw">for</span> (<span class="kw">var</span> j=<span class="dv">0</span>; j &lt; data[i].<span class="ot">temperatures</span>.<span class="fu">length</span>; j++) {
-    totalTemperature += data[i].<span class="fu">temperatures</span>[j];
-  }
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
 
-  averageTemperature = totalTemperature / data[i].<span class="ot">temperatures</span>.<span class="fu">length</span>;
-
-  <span class="ot">coords</span>.<span class="fu">push</span>([averageTemperature, data[i].<span class="fu">population</span>]);
-}</code></pre></td></tr></table>
-</section><section id="dinner" class="slide level2">
-<h1>Dinner</h1>
-<ul>
-<li>Eat spaghetti</li>
-<li>Drink wine</li>
-</ul>
-</section><section class="slide level2">
-
-<figure>
-<img src="/theme/slides/secondslides/images/spaghetti.jpg" alt="picture of spaghetti" /><figcaption>picture of spaghetti</figcaption>
-</figure>
-</section><section id="going-to-sleep" class="slide level2">
-<h1>Going to sleep</h1>
-<ul>
-<li>Get in bed</li>
-<li>Count sheep</li>
-</ul>
 </section>
+
+<!--
+  <script>main()</script>
+-->
+
+
+
+
+
 
 
 
 <!-- Style -->
 <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 <style>
-  html { background-color: black; }
+
   a { color: #FF0066; } a:hover {text-decoration: underline;}
   footer { position: absolute; bottom: 50px; right: 50px; }
   strong {color: #FF0066}
@@ -87,7 +97,9 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
       background-color: white;
       color: white;
       font-size: 2em;
-      background: #1C1C1C;
+        background: -webkit-gradient(linear, left bottom, left top, from(#bbd), to(#fff));
+        background-color: #eee;
+        background: -moz-linear-gradient(bottom, #bbd, #fff);
   }
 
 
@@ -97,7 +109,7 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
       -webkit-transition: left 400ms linear 0s;
       -ms-transition: left 400ms linear 0s;
       transition: left 400ms linear 0s;
-      background: #1C1C1C;
+
   }
   section { left: -150%; }
   section[aria-selected] { left: 0; }
@@ -106,31 +118,10 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
   .chapter { background-color: black;}
   .chapter h1 {line-height: 600px; vertical-align: middle; margin: 0; text-align: center; display: block}
 
-  h1 {
-      margin: 50px 100px 0 100px;
-      font-size: 50px;
-      text-shadow: 0px -1px 0px #000;
-      text-align: left;
-  }
-  h2 {
-      color: #FAE50B;
-      margin: 70px 0 0 0;
-      font-size: 40px;
-      text-align: center;
-  }
-  ul {
-      margin-top: 70px;
-      font-size: 35px;
-      text-align: right;
-      border-right: 4px solid white;
-      padding-right: 40px;
-      min-width: 310px;
-      margin-left: 50px;
-      display: inline-block;
-  }
+
+
   q, p {
-      margin: 50px auto 0 auto;
-      width: 500px;
+      font-size: 18px;
   }
   q:after {content: ""}
   q:before {content: ""}
@@ -157,13 +148,7 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
 
 </style>
 
-<!-- {{{{ *****************  DZSlides CORE 2.0b1 *************************** -->
-<!-- *********************************************************************** -->
-<!-- *********************************************************************** -->
-<!-- *********************************************************************** -->
-<!-- *********************************************************************** -->
 
-<!-- This block of code is not supposed to be edited, but if you want to change the behavior of the slides, feel free to hack it ;) -->
 
 <!-- Default Style -->
 <style>
@@ -189,6 +174,11 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
 
 table.sourceCode {
   font-size: 18px;
+}
+
+img {
+  max-width: 30%;
+  margin: 16px auto;
 }
 </style>
 
@@ -371,5 +361,5 @@ table.sourceCode {
     }
   }
 </script>
-<!-- vim: set fdm=marker: }}} -->
-</body></html>
+</body>
+</html>

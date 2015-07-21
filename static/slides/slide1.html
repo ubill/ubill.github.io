@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Landslide</title>
+    <title>Slides1</title>
     <!-- Styles -->
     
 
@@ -31,8 +31,10 @@
 
 <section class="slide level2">
     
-        <h1>Landslide</h1>
+        <h1>Slides1</h1>
     
+    
+        <p><img alt="spaghetti" src="/static/slides/images/spaghetti.jpg" /></p>
     
 </section>
 
@@ -41,8 +43,8 @@
         <h1>Overview</h1>
     
     
-        <p>Generate HTML5 slideshows from markdown, ReST, or textile.</p>
-<p><img alt="spaghetti" src="/theme/slides/secondslides/images/spaghetti.jpg" /></p>
+        <p>This is image from PRIV <code>static</code> folder:</p>
+<p><img alt="spaghetti" src="/static/slides/images/spaghetti.jpg" /></p>
 <p>Landslide is primarily written in Python, but it's themes use:</p>
 <ul>
 <li>HTML5</li>
@@ -54,7 +56,7 @@
 
 <section class="slide level2">
     
-        <h1>Code Sample</h1>
+        <h1>Code Sample 1</h1>
     
     
         <p>Landslide supports code snippets</p>
@@ -69,6 +71,104 @@
 
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+    
+</section>
+
+<section class="slide level2">
+    
+        <h1>Code Sample 2</h1>
+    
+    
+        <p>Landslide supports about 20 lines of code per slide</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*- #</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">u&#39;Ubill&#39;</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">u&quot;Ubill&#39;s Blog&quot;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+
+<span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;content&#39;</span>
+
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Kuala_Lumpur&#39;</span>
+
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">u&#39;en&#39;</span>
+
+<span class="c"># Feed generation is usually not desired when developing</span>
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">TRANSLATION_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">AUTHOR_FEED_ATOM</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="n">AUTHOR_FEED_RSS</span> <span class="o">=</span> <span class="bp">None</span>
+</pre></div>
+</td></tr></table>
+    
+</section>
+
+<section class="slide level2">
+    
+        <h1>Code Sample 3</h1>
+    
+    
+        <p>So split slides wisely</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span class="c"># Blogroll</span>
+<span class="n">LINKS</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span><span class="s">&#39;Pelican&#39;</span><span class="p">,</span> <span class="s">&#39;http://getpelican.com/&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s">&#39;Python.org&#39;</span><span class="p">,</span> <span class="s">&#39;http://python.org/&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s">&#39;Jinja2&#39;</span><span class="p">,</span> <span class="s">&#39;http://jinja.pocoo.org/&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+
+<span class="c"># Social widget</span>
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span><span class="s">&#39;The Original Intro Post&#39;</span><span class="p">,</span> <span class="s">&#39;http://ubill.github.io/intro-post.html&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s">&#39;Facebook&#39;</span><span class="p">,</span> <span class="s">&#39;https://www.facebook.com&#39;</span><span class="p">),</span>
+         <span class="p">)</span>
+
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c"># Uncomment following line if you want document-relative URLs when developing</span>
+<span class="c">#RELATIVE_URLS = True</span>
+
+<span class="n">DELETE_OUTPUT_DIRECTORY</span> <span class="o">=</span> <span class="bp">True</span>
 </pre></div>
 </td></tr></table>
     
