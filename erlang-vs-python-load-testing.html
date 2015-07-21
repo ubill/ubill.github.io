@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Erlang vs. Python, Load Testing - Ubill's Blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="icon" type="image/png" href="/static/images/favicon.png" />
+
+<link rel="canonical" href="/erlang-vs-python-load-testing.html">
+
+        <meta name="author" content="Ubill" />
+        <meta name="keywords" content="load-testing,python,erlang" />
+        <meta name="description" content="In a previous post of this blog, I mentioned about getting into explorations into Erlang. As with beginning to learn any new thing, it is always good if we could beforehand know of what are the domains in which it is strong, and what are the benefits it could offer ..." />
+
+        <meta property="og:site_name" content="Ubill's Blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Erlang vs. Python, Load Testing"/>
+        <meta property="og:url" content="/erlang-vs-python-load-testing.html"/>
+        <meta property="og:description" content="In a previous post of this blog, I mentioned about getting into explorations into Erlang. As with beginning to learn any new thing, it is always good if we could beforehand know of what are the domains in which it is strong, and what are the benefits it could offer ..."/>
+        <meta property="article:published_time" content="2015-07-21" />
+            <meta property="article:section" content="Erlang" />
+            <meta property="article:tag" content="load-testing" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="erlang" />
+            <meta property="article:author" content="Ubill" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Ubill's Blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/discoveries.html">Discoveries</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/erlang.html">Erlang</a>
+                        </li>
+                        <li >
+                            <a href="/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="/category/perspective.html">Perspective</a>
+                        </li>
+                        <li >
+                            <a href="/category/tools.html">Tools</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/erlang-vs-python-load-testing.html"
+                       rel="bookmark"
+                       title="Permalink to Erlang vs. Python, Load Testing">
+                        Erlang vs. Python, Load Testing
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-07-21T10:37:00+08:00"> Tue 21 July 2015</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/load-testing.html">load-testing</a>
+        /
+	<a href="/tag/python.html">python</a>
+        /
+	<a href="/tag/erlang.html">erlang</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>In a previous post of this blog, I mentioned about getting into explorations into Erlang.
+As with beginning to learn any new thing, it is always good if we could beforehand know
+of what are the domains in which it is strong, and what are the benefits it could offer
+in those areas. To examine one of the use cases for it, let's consider this common scenario.</p>
+<blockquote>
+<p>As any public site or web service increases in popularity,
+it follows that the number of concurrent users at any
+moment of time correspondingly increases.<sup id="fnref:woman"><a href="#fn:woman" rel="footnote">1</a></sup></p>
+</blockquote>
+<p>Typical operations such as requesting a webpage, creation of new user accounts,
+or querying for data keep incessantly coming in at a fast and furious rate.</p>
+<p>A web service which is not capable of handling a large amount of concurrent
+incoming requests will either respond extremely slowly to each request, or many
+requests may just fail outright. This is especially exacerbated in operations
+that do not quickly complete - for example, if the operation needs the server
+to itself make an outgoing request to yet another remote backend.
+Having the quality of service adversely afflicted by this kind of 'paralysis'
+seems even more unacceptable, especially when you note that during the
+bombardment of incoming requests, the server's CPU utilization is actually
+extremely low. In effect, our server is actually spending most of its time
+doing nothing but waiting - yet is unable to accept and service more incoming requests.</p>
+<p>To find out the capabilities of our server, we carry out load testing on it.
+Of which, the methodology is more or less succinctly summarized by this comic strip.</p>
+<p><img alt="Load Testing" src="/static/images/calvin-hobbes-truck-bridge.gif" /></p>
+<p>The problem of handling many simultaneous clients is dubbed the C10K problem,
+and there are several approaches to tackle it. To name some of them:</p>
+<ul>
+<li>scaling (adding more servers),</li>
+<li>changing specific software libraries, or</li>
+<li>changing the underlying technology and programming paradigm.</li>
+</ul>
+<p>A recent query about the throughput of a webservice I was involved in writing necessitated
+load testing on our API and sparked off a comparison between a Python-implemented
+service (behind nginx webserver) and an Erlang-implemented one
+(no separate webserver running; just using the Cowboy webserver library, which is pure Erlang code.)</p>
+<p>To summarize, we found that the Python service's</p>
+<ul>
+<li>throughput hit a ceiling of 18 requests/s from 32 concurrent users</li>
+<li>increasing to 64 concurrent users does not increase the req/s - however the
+  average response time becomes twice as long</li>
+<li>increasing even further to 256 concurrent users gets a lot (30%-50%) of error
+  responses, specifically 502 Bad Gateway or outright "connection refused"</li>
+</ul>
+<p>In contrast, running on the same hardware configuration,</p>
+<ul>
+<li>The Erlang service performed with 0% error responses even with 512 concurrent
+  users (higher concurrent user count was not tested)</li>
+<li>The response time is as long as the external remote backend's response time,
+  with very little overhead from our Erlang service
+  (for our tests, we requested the main page of very popular search engine)</li>
+<li>Our Erlang service, in the same request, also wrote and queried a MySQL database
+  and to an in-memory cache, performing the equivalent of all the operations of the Python service</li>
+<li>The throughput for this was 121 req/s</li>
+<li>It was able to accept incoming requests and send out outgoing requests at the same rate</li>
+<li>When the outgoing request was replaced with a simulation of an extremely slow backend
+  by using an 8-second sleep, the throughput for 512 concurrent users was still a commendable rate of 60/s</li>
+<li>Without any remote call or sleep, 256 concurrent users can achieve a throughput of 316/s</li>
+<li>Hot-code reloading i.e. changing the logic on-the-fly without disconnecting ongoing requests
+  or having to restart the server, yet automatically switching new requests to the new logic
+  was also demonstrated (this is a side exploration done while the server was under load;
+  not as a performance-influencing attempt.)</li>
+</ul>
+<p><a name="more-details"></a>
+In addition, the Python service consumed more memory when the number of its 'workers'
+was increased in an attempt to stretch its capability. The Erlang service was observed
+to consume practically an almost constant amount of memory throughout its operation.
+CPU utilization during the bombardment of requests was constantly low, which is consistent
+with our operation not being a CPU-bound workload.</p>
+<hr />
+<p>In the preceding section, we have summarized the server characteristics under load.</p>
+<p>So we would like to attempt an explanation, about why is there such a difference
+in the load-handling capability, when the hardware never changed.</p>
+<p>When an incoming request hits a typical Python webapp, a 'worker' handles the request
+from its initiation until the response is formed and returned to the client.
+There are a few models of what this 'worker' is, in default configurations it is
+usually an OS thread, either one-to-one for workers to threads, or possibly in some other configuration.</p>
+<p>When all requests complete quickly, the number of incoming requests queued will be able
+to be serviced by the finite pool of workers. Therefore we will not be noticing any problem.
+The problem comes when the operation is slow, as in the case of the server itself
+making remote requests. When all the workers are busy waiting for a response,
+during that time, no incoming request is able to be accepted nor serviced.
+Consequently, the rate of outgoing requests made is constrained by all the
+outgoing requests currently taking up all the workers at that time.</p>
+<p>The following diagram shows, conceptually, workers in a Python webapp.
+The workers which are typically OS threads each take up a considerable footprint
+of OS resources, particularly memory.
+This limits the extent to which one can scale by increasing the number of workers.</p>
+<p><img alt="Python runtime and worker footprint" src="/static/images/python-runtime-and-worker-footprint.jpg" /></p>
+<p>In an Erlang app, the workers are actually constructs within the Erlang runtime called 'processes',
+of which each one takes up an extremely small amount of memory.
+It is not uncommon for 100,000 such workers to be able to be spawned within an Erlang process.</p>
+<p>Behaviourally, workers in Erlang behave similarly as OS processes, but without the
+footprint and overhead of actual OS processes (or threads.)
+Which is why they are named 'processes'. This is illustrated in the following diagram:</p>
+<p><img alt="Erlang runtime and worker footprint" src="/static/images/erlang-runtime-and-worker-footprint.jpg" /></p>
+<p>This makes Erlang ideal for the use case of handling a large amount of IO-bound operations,
+that is, operations that spend most of the time waiting rather than actively processing.
+In our use case, an incoming request is each accepted and handled by its own individual
+Erlang process, which performs the db tasks, sends the outgoing request, and waits for the response.
+During this time, new incoming requests are still able to be readily accepted and handled,
+because it is so cheap to spawn Erlang processes.</p>
+<p>We also note that the requests to our Python webapp are routed through the nginx webserver
+in front, as is typically configured.
+In the case of Erlang, the Cowboy Erlang webserver, entirely implemented in Erlang code,
+and the Erlang runtime itself are all that is needed to provide the same functionality,
+at the same time without requiring an inordinately large amount of RAM.</p>
+<h2>Closing words</h2>
+<p>So, what did we learn from all this?
+Firstly, we identified one of the use cases where Erlang shines, and this gives us
+at least one compelling reason to find out more about this seemingly less-hyped,
+but surprisingly effective option.
+Next, is it worth the effort to tackle the strange syntax, programming paradigms
+and unfamiliar (yet effective) toolchain that using Erlang requires?</p>
+<p>In my opinion, the answer is 'Yes', and I look at it this way:</p>
+<p>For some applications, they have to be developed in such a low-level language as Assembly Language.
+The reason being in order to get the specific benefits - e.g. more deterministic execution,
+faster response, less overhead, etc. - that taking such a deliberate effort confers.</p>
+<p>By the same token, for some applications, to get specific characteristic or benefits,
+they happen to be readily achievable by using the Erlang runtime.</p>
+<p><em>So, the takeaway</em> - just as how one gains specific benefits by programming using Assembly Language
+targeting a certain embedded processor,
+we are targeting the Erlang runtime to achieve the specific benefits therefrom,
+so we use Erlang language<sup id="fnref:elixir"><a href="#fn:elixir" rel="footnote">2</a></sup> to program for that runtime.</p>
+<p>Thanks for reading!
+In future installments, we will explore more about how to start making Erlang work for us.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:woman">
+<p>Though the revelatory degree of this statement can be summed up thus:
+<em>Who doesn't know his mom is a woman?</em>&#160;<a href="#fnref:woman" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:elixir">
+<p>The useful properties of the Erlang runtime has been recognized by some and
+gained some traction, thus languages such as <strong>Lisp-Flavored Erlang</strong> (LFE) and
+the Ruby-esque <strong>Elixir</strong>
+have surfaced, of which you write your code in those languages, and they
+target the Erlang runtime all the same.&#160;<a href="#fnref:elixir" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Ubill
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+<div class="container">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'ubill';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<!-- Disqus comment count -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'ubill';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script><!-- Analytics -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-62650563-1");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+</body>
+</html>
