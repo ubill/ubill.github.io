@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>Starting Erlang With A Game! - Introduction - Ubill's Blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/starting-erlang-with-a-game-introduction.html">
+
+        <meta name="author" content="Ubill" />
+        <meta name="description" content="CAT PICTURE I SHOULD LEARN FP - host on FB DOGE PICTURE: much wow. Wokay, after setting up this blog, time to exercise the convenience in authoring (typing out code and stuff) by beginning a series of guides on getting into Erlang. So... why in the first place even bother (jumping ..." />
+
+        <meta property="og:site_name" content="Ubill's Blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Starting Erlang With A Game! - Introduction"/>
+        <meta property="og:url" content="/starting-erlang-with-a-game-introduction.html"/>
+        <meta property="og:description" content="CAT PICTURE I SHOULD LEARN FP - host on FB DOGE PICTURE: much wow. Wokay, after setting up this blog, time to exercise the convenience in authoring (typing out code and stuff) by beginning a series of guides on getting into Erlang. So... why in the first place even bother (jumping ..."/>
+        <meta property="article:published_time" content="2015-05-30" />
+            <meta property="article:section" content="Erlang" />
+            <meta property="article:author" content="Ubill" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Ubill's Blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/discoveries.html">Discoveries</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/erlang.html">Erlang</a>
+                        </li>
+                        <li >
+                            <a href="/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="/category/personal.html">Personal</a>
+                        </li>
+                        <li >
+                            <a href="/category/tools.html">Tools</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/starting-erlang-with-a-game-introduction.html"
+                       rel="bookmark"
+                       title="Permalink to Starting Erlang With A Game! - Introduction">
+                        Starting Erlang With A Game! - Introduction
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-05-30T11:31:00+08:00"> Sat 30 May 2015</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>CAT PICTURE I SHOULD LEARN FP - host on FB
+DOGE PICTURE: much wow.</p>
+<p>Wokay, after setting up this blog, time to exercise the convenience in
+authoring (typing out code and stuff) by beginning a series of guides on
+getting into <code>Erlang</code>.</p>
+<p>So... why in the first place even bother (jumping through hoops) with learning
+this programming language?</p>
+<p>This blurb -&gt;</p>
+<blockquote>
+<p><strong>Erlang, Functional Programming and the Actor Model.</strong></p>
+<p>Erlang is a soon to be 30-year old programming language that has, in recent
+years, come into prominence for its reputation of powering prominent services
+such as Whatsapp and Facebook Messenger, and for being used to implement
+increasingly ubiquitous tools such as RabbitMQ. Other projects using it are
+CouchDB, Riak and also Amazon Web Services' SimpleDB.</p>
+</blockquote>
+<p>Ok... so now, why then, <code>Functional Programming</code>?</p>
+<p>Let me go on a tangent here. Having worked on some project that got complicated
+fast and just exploded with more and more code paths as the rules and 'special rules'
+for the business logic kept expanding without bound (the world just wants to
+add things in, never taking things out) I began to wonder to myself, is there
+any better way for me to structure and organize my code, with these
+desired characteristics -</p>
+<ul>
+<li><strong>Reading</strong>: That code would be so easy to read, that at a glance, you would know
+  which part does what and where to change, <em>as easy as reading <strong>HTML</strong> or even <strong>plaintext</strong>.</em></li>
+<li><strong>Writing</strong>: As easy as writing a blog. As easy as writing <strong>HTML</strong> or even <strong>plaintext</strong>,</li>
+<li><strong>Maintenance/updating</strong>: Where you would just know, at a glance,
+  that changing a certain part of code that you see in front of you will not cause
+  some propagated unknown change in some distant part of the code...
+  And you didn't need to delve in and <strong><em>trace</em></strong>, all possible code paths deep into
+  the code...</li>
+<li>That you could be swap in/out entire blocks of code with well-defined purpose when you want
+  to change rules/its behaviour.</li>
+</ul>
+<p>For these goals, it would be good if you could write your code in a <strong>declarative</strong> manner,
+much like HTML, rather than an <strong>imperative</strong> manner, where you needed to trace line by line
+your code. For declarative, you should be able to at a glance, know <code>'what just is'</code>.</p>
+<p>It always inspired me that some people can do a <strong>one-man show</strong>, write code, and build an
+entire company out of it. It's probably still possible today (and people are already/still
+doing it) but until I would like to reach that level myself one day soon.<sup id="fnref:level"><a href="#fn:level" rel="footnote">1</a></sup></p>
+<p>Ok, given that the above desired characteristics are probably more of code organization
+than inherent any programming language itself, still there are perhaps some languages
+which happen to encourage/enforce writing in such a manner more than others.</p>
+<p>Back to Functional Programming. The buzz about it today is that programs structured thus
+are <code>more scalable</code>, <code>maintainable</code>, and a lot of buzzwords like <code>'no side effects'</code>, <code>'no
+mutable state'</code>, <code>'lambda calculus'</code>, etc. etc. which we probably don't really need to
+spew off to be able to begin writing a program.</p>
+<p>The thing we need to know is a 'basic unit' of such programs is a function
+which takes in certain inputs and returns an output, and in the body of the function,
+it doesn't depend on any other <code>state</code>, solely on the inputs.</p>
+<ul>
+<li>That makes splitting such processing over any number of processing units/cores
+  feasible,</li>
+<li>The output is always the same for a given set of inputs no matter the state of
+  anything else, that makes things more easily repeatable and debuggable</li>
+</ul>
+<p>Okay you don't have to take <strong>9999</strong> damage from <strong>Wall of Words</strong> if this may or may not
+make sense to you. There are excellent articles I found which explain things in
+much more detail to you. I'm curating my favourites, and quotes therefrom
+in this blog post actually, as much as for my own reference as anybody's:</p>
+<ul>
+<li>Google searchstring: why is functional programming better</li>
+<li>http://www.smashingmagazine.com/2014/07/02/dont-be-scared-of-functional-programming/
+This site explains, with simple code example, the concept of functional programming,
+in Javascript. It makes a whole lot of sense and you'll be attracted to write your
+programs in this style after you go through it.
+Basically, the Why (the concept) and the What (real code examples) of Functional Programming.</li>
+</ul>
+<p>What I got from this article was Two Things:</p>
+<ul>
+<li>The Three Rules: Mainly, 'functions that accept inputs and return output(data or another function).'
+here are some simple ground rules to ensure that you’re following best practices:
+All of your functions must accept at least one argument.
+All of your functions must return data or another function.
+No loops!
+OK, let’s add every number in a list. Remembering the rules, let’s make sure that our function accepts an argument (the array of numbers to add) and returns some data.
+function totalForArray(arr) {
+  // add everything
+  return total;
+}</li>
+<li>And <strong>chaining</strong>. (Basically, one-liners, which are also <strong>readable</strong>, and tell you immediately what is happening,
+thus fulfilling the one of desired characteristics that I mentioned way earlier.)</li>
+</ul>
+<p>var processed = combineArrays(pluck(data, 'temperatures').map(averageForArray), pluck(data, 'population'));</p>
+<ul>
+<li>http://www.drdobbs.com/tools/its-time-to-get-good-at-functional-progr/212201710</li>
+</ul>
+<p>Article from Dr. Dobbs, which what I got from this was:</p>
+<blockquote>
+<p>You can't change the state of anything, and no function can have side effects, which is the reason why FP is ideal for distributing algorithms over multiple cores.
+Ctrl-F search for that and the surrounding text.
+'functional language programs avoid state and mutable data'
+This, and the first article would already have answered your question about
+how exactly do you write a program according to that.</p>
+</blockquote>
+<p>The second page of this article was not so useful to me though,
+it just introduces a few programming languages which the functional programming
+practice is prevalent. I had already been delving into Erlang
+before surfing onto this article though.</p>
+<ul>
+<li>http://eloquentjavascript.net/1st_edition/chapter6.html
+The first paragraph of this online book.
+It has a second edition though, but this specific page had the content that caught my eye.
+Here's the links to the 2nd edition anyway though, for completeness:
+http://eloquentjavascript.net/
+http://eloquentjavascript.net/05_higher_order.html</li>
+</ul>
+<p>Anyway, reading the first paragraphs, it is exactly the kind of situation that makes
+me search for better ways to do things. I paste it here for my own reference and inspiration just
+in case that page gets taken off unexpectedly one day.</p>
+<blockquote>
+<p>As programs get bigger, they also become more complex and harder to understand. We all think ourselves pretty clever, of course, but we are mere human beings, and even a moderate amount of chaos tends to baffle us. And then it all goes downhill. Working on something you do not really understand is a bit like cutting random wires on those time-activated bombs they always have in movies. If you are lucky, you might get the right one ― especially if you are the hero of the movie and strike a suitably dramatic pose ― but there is always the possibility of blowing everything up.</p>
+<p>Admittedly, in most cases, breaking a program does not cause any large explosions. But when a program, by someone's ignorant tinkering, has degenerated into a ramshackle mass of errors, reshaping it into something sensible is a terrible labour ― sometimes you might just as well start over.</p>
+<p>Thus, the programmer is always looking for ways to keep the complexity of his programs as low as possible. An important way to do this is to try and make code more abstract. When writing a program, it is easy to get sidetracked into small details at every point. You come across some little issue, and you deal with it, and then proceed to the next little problem, and so on. This makes the code read like a grandmother's tale.</p>
+</blockquote>
+<p>What we're talking about there is we want to make our code <strong>declarative</strong> -
+to me, something like HTML is the best, as we know what it is at a glance -
+no need to trace.</p>
+<ul>
+<li>http://www.defmacro.org/ramblings/fp.html</li>
+</ul>
+<p>I found this article informative and inspiring. It does a good job of explaining
+the concepts and the Why of FP. Apart from that, it also explains the feature of
+<strong>'Hot Code Deployment'</strong> and why it happens to be possible in FP programs.</p>
+<ul>
+<li>https://medium.com/@jugoncalves/functional-programming-should-be-your-1-priority-for-2015-47dd4641d6b9</li>
+</ul>
+<p>Here is a page that has a counter-example on the poor readability of programs written
+in the functional style. I myself found it difficult for a good few months about
+the readability of Erlang code. But that was before I even had any knowledge about
+the FP concepts or what they really meant, for the longest time.</p>
+<p>Quote:</p>
+<blockquote>
+<p>Many may argue that FP has poor readability. If you'd have a imperative background, functional programs will look like a crypt language. Not because it's actually crypt, but because you still don't know its common idioms. Once you master its fundamentals, it gets a lot more readable.</p>
+</blockquote>
+<ul>
+<li>http://maryrosecook.com/blog/post/a-practical-introduction-to-functional-programming
+Mary Rose Cook: A practical introduction to functional programming
+Looks like a very well-written site, and for those of you who would prefer Python,
+this has extensive examples in Python. I didn't use this page much myself though,
+at time of writing.</li>
+</ul>
+<p>Here are some other pages that I didn't really use much myself, but just
+saving the links here for later reading:</p>
+<p>https://engineering.heroku.com/blogs/2014-09-17-erlang-in-anger
+https://medium.com/javascript-scene/the-two-pillars-of-javascript-pt-2-functional-programming-a63aa53a41a4
+https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3
+https://pragprog.com/magazines/2013-01/functional-programming-basics
+Google searchstring: functional programming vs object oriented
+http://www.vasinov.com/blog/16-months-of-functional-programming/
+This page has an interesting cat picture with respect to FP.
+http://c2.com/cgi/wiki?FunctionalProgramming
+https://electricimp.com/
+http://blog.electricimp.com/post/85932940180/electric-imp-moves-to-erlang-programming-language
+http://blog.bugsense.com/post/74179424069/erlang-binary-garbage-collection-a-love-hate
+https://orchestrate.io/blog/2014/03/21/voices-tristan-sloughter-on-erlang-nosql-and-technologys-effect-on-economics-and-culture/
+https://terinstock.com/blog/2014/07/02/tls-with-erlang.html
+https://terinstock.com/blog/2014/02/27/replacing-packages-in-a-browserify-bundle.html</p>
+<p>These may or may not be related to FP or Erlang, but I personally categorize them
+under the same for my later reading as it came from the same search.</p>
+<p>Finally, this page: which introduces Three Important Concepts about FP
+(indeed, about all programming?)
+Three kinds of operations on data are
+- filtering,
+- reduction ('folding')
+- and transformation ('mapping')</p>
+<p>With the idea that, for loops conflate and obfuscate the logic i.e. what's actually
+going on, which is one of those three operations.</p>
+<p>Knowing that, coding FP style actually could make code more readable at a glance
+by removing all those loops, inner loops, iteration counters, etc. from
+what's happening.</p>
+<p>Would have put this page introduction at the top, but I just followed
+my browser tab sequence, which also means:
+after this curation, I could actually close my browser! (read: all those open tabs in my browser)</p>
+<p>Okay, that was quite a lot of text
+and we still hadn't gotten into the other item: Actor Model.
+But since this post is getting long, we'll cover that in a separate article.
+Cheers!</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:level">
+<p>I know, the common notion: Just <em>hire</em> somebody else who would do that
+and concentrate and getting funding etc. the whole entrepreneurial shebang.
+Still, it's a level of skill that I would like to get to myself.&#160;<a href="#fnref:level" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="http://ubill.github.io/intro-post.html"><i class="fa fa-the-original-intro-post-square fa-lg"></i> The Original Intro Post</a></li>
+                <li class="list-group-item"><a href="https://www.facebook.com"><i class="fa fa-facebook-square fa-lg"></i> Facebook</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 Ubill
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <h2>Comments</h2>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'ubill';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<!-- Disqus comment count -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'ubill';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script><!-- Analytics -->
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-62650563-1");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+</body>
+</html>
