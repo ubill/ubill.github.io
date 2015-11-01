@@ -1,0 +1,165 @@
+@media only screen and (max-width: 40em) {
+  .horiz-slides {
+      width: 94%;
+      min-height: 400px;
+      display: block;
+      margin: 0 auto;
+  }
+
+  .sharrre {
+    display: none;
+  }
+
+  .hide-for-big-only {
+    display: block;
+  }
+
+  .fork-me {
+    top: 52px;
+  }
+
+  .header-home .container {
+    padding-top: 88px;
+  }
+
+  .intro {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .intro h2 {
+    line-height: 32px;
+    font-size: 22px;
+  }
+
+  .home-menu {
+    display: none;
+  }
+
+  .component-container {
+    margin-top: 0;
+    margin-left: 0;
+    max-width: none;
+    padding-top: 44px;
+  }
+
+  .component-name {
+    display: block;
+    margin-top: 55px;
+    margin-left: -10px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (min-width: 40.063em) {
+
+  .padded.column {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .component-container h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .component-container h1:first-child {
+    margin-top: 0;
+  }
+
+  .component-container h2, .component-container h3 {
+    margin-top: 34px;
+    margin-bottom: 12px;
+  }
+
+  .horiz-slides {
+      width: 94%;
+      min-height: 400px;
+      display: block;
+      margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 64.063em) {
+
+  .hide-for-small-only {
+    display: block;
+  }
+
+  .hide-for-big-only {
+    display: none;
+  }
+
+  .intro {
+    margin-left: 250px;
+    margin-right: 432px; /* device-width + 100px */
+  }
+
+  .phonon-bar .title {
+    font-size: 24px;
+  }
+
+  .phonon-bar li a {
+    font-size: 20px;
+    padding: 0 14px;
+  }
+
+  .home-container, .home .page-footer, .documentation .page-footer {
+    padding-left: 80px;
+  }
+
+  .component-container {
+    padding: 0 10%;
+    margin-left: 250px;
+  }
+
+  .components-container {
+    margin-right: 350px;
+  }
+
+/**  .container {
+    max-width: 70%;
+  } **/
+
+  .horiz-slides {
+      width: 700px;
+      height: 600px;
+      display: block;
+      margin: 0 auto;
+  }
+
+  .page-footer .container .pull-right {
+    float: right;
+  }
+}

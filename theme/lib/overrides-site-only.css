@@ -1,0 +1,13 @@
+header [class^="icon-"]:before,
+header [class*=" icon-"]:before {
+  font-family: 'MaterialDesignIcons';
+}
+
+.fb-comments {
+    margin-bottom: 50px;
+}
+
+header.show-for-phone-only h1.title a {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,38 +1,27 @@
 <!DOCTYPE html>
-<html lang="en"
->
+<html>
 <head>
-    <title>Archives - Ubill's Blog</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ubill's Blog</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="description" content="Ubill's Tech Adventures.">
+  <meta name="keywords" content="">
+  <meta name="author" content="U Bill Lee">
 
+  <link rel="stylesheet" href="./theme/lib/phonon/css/main.css">
+  <link rel="stylesheet" href="./theme/lib/phonon/css/phonon.css">
+  <link rel="stylesheet" href="./theme/lib/phonon/css/site.css">
+  <link rel="stylesheet" href="./theme/lib/phonon/css/responsive.css">
+  <link rel="stylesheet" href="./theme/lib/overrides.css">
+  <link rel="stylesheet" href="./theme/lib/overrides-site-only.css">
 
-    <link rel="icon" type="image/png" href="/static/images/favicon.png" />
-
-
-        <meta name="author" content="Ubill" />
-
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="Ubill's Blog" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Ubill's Blog"/>
-        <meta property="og:url" content=""/>
-        <meta property="og:description" content="Ubill's Blog"/>
-
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
-
-
+  <link rel="stylesheet" href="./theme/lib/prism.css">
+  <script src="./theme/lib/prism.js"></script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
-<body>
-
+<body class="documentation">﻿
 <!--FB Comments-->
 <script>
   window.fbAsyncInit = function() {
@@ -53,59 +42,39 @@
 </script>
 <div id="fb-root"></div>
 
+  <header class="phonon-bar show-for-tablet-only show-for-tablet-up">
+    <h3 class="brand"><a href="/">ubill.github.io</a></h3>
+    <ul class="links pull-right">
+      <li><a href="http://phonon.quarkdev.com/components/">UI Components</a></li>
+      <li><a href="./Documentation API _ Start_files/Documentation API _ Start.html">Docs</a></li>
+      <li><a href="http://phonon.quarkdev.com/#getting-started">Getting Started</a></li>
+    </ul>
+  </header>
 
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">
-Ubill's Blog            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                        <li >
-                            <a href="/category/discoveries.html">Discoveries</a>
-                        </li>
-                        <li >
-                            <a href="/category/erlang.html">Erlang</a>
-                        </li>
-                        <li >
-                            <a href="/category/general.html">General</a>
-                        </li>
-                        <li >
-                            <a href="/category/perspective.html">Perspective</a>
-                        </li>
-                        <li >
-                            <a href="/category/tools.html">Tools</a>
-                        </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+  <header class="header-bar show-for-phone-only">
+    <button class="btn pull-left icon icon-menu" id="toggle-menu" data-menu-id="site-menu"></button>
+    <div class="center">
+      <h1 class="title" data-popover-id="site-menu">
+        <a href="/" class="brand">
+ubill.github.io        </a>
+      </h1>
     </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
+  </header>
 
-        <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-        <div class="fb-share-button" data-layout="button_count"></div>
-        <div class="fb-send"></div>
+  <div class="container component-container">
 
-        <div class="col-lg-12">
+    <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    <div class="fb-share-button" data-layout="button_count"></div>
+    <div class="fb-send"></div>
+
 
     <section id="content">
         <h1>Archives for Ubill's Blog</h1>
         <div id="archives">
+                <p>
+                    <span class="categories-timestamp"><time datetime="2015-11-01T22:49:00+08:00">Sun 01 November 2015</time></span>
+                    <a href="/stackedit-revisited.html">StackEdit Revisited</a>
+                </p>
                 <p>
                     <span class="categories-timestamp"><time datetime="2015-07-21T10:37:00+08:00">Tue 21 July 2015</time></span>
                     <a href="/erlang-vs-python-load-testing.html">Erlang vs. Python, Load Testing</a>
@@ -144,72 +113,64 @@ Ubill's Blog            </a>
                 </p>
         </div>
     </section>
-        </div>
-    </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-         <div class="col-xs-10">&copy; 2015 Ubill
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="/theme/js/jquery.min.js"></script>
+  </div>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
 
-<div class="container">
-    <h2>Comments</h2>
 
-    <div class="fb-comments" data-width="630" data-numposts="10"></div>
 
-    <div id="disqus_thread"></div>
-</div>
 
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'ubill';
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
-<!-- Disqus comment count -->
-    <script type="text/javascript">
+  <footer class="page-footer">
+    <div class="container">
+      <h3>Comments</h3>
+      <div class="fb-comments" data-width="630" data-numposts="10"></div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
         var disqus_shortname = 'ubill';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script'); s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
-    </script><!-- Analytics -->
-    <script type="text/javascript">
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-        try {
-            var pageTracker = _gat._getTracker("UA-62650563-1");
-            pageTracker._trackPageview();
-        } catch(err) {}
-    </script>
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      <!-- Disqus comment count -->
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES * * */
+          var disqus_shortname = 'ubill';
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function () {
+              var s = document.createElement('script'); s.async = true;
+              s.type = 'text/javascript';
+              s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+              (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+          }());
+      </script><!-- Analytics -->
+      <script type="text/javascript">
+          var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+          document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+          try {
+              var pageTracker = _gat._getTracker("UA-62650563-1");
+              pageTracker._trackPageview();
+          } catch(err) {}
+      </script>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2015 Ubill
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
