@@ -137,13 +137,13 @@ Ubill's Blog            </a>
 causes a request to be sent to a certain remote host,
 let's say <code>abc.com</code>.</p>
 <p>Here's how to do it:</p>
-<div class="highlight"><pre><span class="n">ping</span> <span class="n">abc</span><span class="p">.</span><span class="n">com</span>
+<div class="highlight"><pre>ping abc.com
 </pre></div>
 
 
 <p>to get the IP of the remote host. Let's say it's <code>158.85.52.72</code>.</p>
 <p>Then, open a terminal, and use this command line:</p>
-<div class="highlight"><pre><span class="n">netstat</span> <span class="o">-</span><span class="n">nputwc</span> <span class="o">|</span> <span class="n">grep</span> 158<span class="p">.</span>85<span class="p">.</span>52<span class="p">.</span>72
+<div class="highlight"><pre>netstat -nputwc <span class="p">|</span> grep 158.85.52.72
 </pre></div>
 
 
@@ -165,12 +165,12 @@ is made to that remote host you're interested in.</p>
 while eyeballing the first terminal.</p>
 <p>You'll see something like this flash by on the screen if some outgoing request
 really did happen:</p>
-<div class="highlight"><pre><span class="n">tcp</span>        0      0 10<span class="p">.</span>0<span class="p">.</span>2<span class="p">.</span>15<span class="p">:</span>36162         158<span class="p">.</span>85<span class="p">.</span>52<span class="p">.</span>72<span class="p">:</span>80         <span class="n">TIME_WAIT</span>   <span class="o">-</span>
+<div class="highlight"><pre>tcp        <span class="m">0</span>      <span class="m">0</span> 10.0.2.15:36162         158.85.52.72:80         TIME_WAIT   -
 </pre></div>
 
 
 <p>What I specifically did was I just ran from another terminal</p>
-<div class="highlight"><pre><span class="n">wget</span> <span class="n">aaa</span><span class="o">-</span><span class="n">bb</span><span class="o">-</span><span class="n">cccc</span><span class="p">.</span><span class="n">dd</span><span class="p">.</span><span class="n">abc</span><span class="p">.</span><span class="n">com</span>
+<div class="highlight"><pre>wget aaa-bb-cccc.dd.abc.com
 </pre></div>
 
 
