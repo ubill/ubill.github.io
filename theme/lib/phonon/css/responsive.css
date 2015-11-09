@@ -2,16 +2,37 @@
   .body-background {
       margin-top: 0;
   }
+
+  .horiz-slides {
+      max-width: 90%;
+      height: 600px;
+      display: block;
+      margin: 0 auto;
+  }
 }
 
 @media only screen and (min-width: 40.063em) {
   .body-background {
       margin-top: 34px;
   }
+
+  .horiz-slides {
+      width: 700px;
+      height: 600px;
+      display: block;
+      margin: 0 auto;
+  }
 }
 
 @media only screen and (min-width: 64.063em) {
   .body-background {
       margin-top: 34px;
+  }
+
+  .horiz-slides {
+      width: 700px;
+      height: 600px;
+      display: block;
+      margin: 0 auto;
   }
 }
