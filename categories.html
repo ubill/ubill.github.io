@@ -12,18 +12,15 @@
 
   <link rel="icon" type="image/png" href="/static/images/favicon.png" />
 
-  <link rel="stylesheet" href="./theme/lib/phonon/css/main.css">
-  <link rel="stylesheet" href="./theme/lib/phonon/css/phonon.css">
-  <link rel="stylesheet" href="./theme/lib/phonon/css/site.css">
-  <link rel="stylesheet" href="./theme/lib/phonon/css/responsive.css">
-  <link rel="stylesheet" href="./theme/lib/overrides.css">
-  <link rel="stylesheet" href="./theme/lib/overrides-site-only.css">
+  <link rel="stylesheet" href="/theme/lib/phonon/css/phononmain.css">
+  <link rel="stylesheet" href="/theme/lib/phonon/css/responsive.css">
 
-  <link rel="stylesheet" href="./theme/lib/prism.css">
-  <script src="./theme/lib/prism.js"></script>
+  <link rel="stylesheet" href="/theme/lib/prism.css">
+  <script src="/theme/lib/prism.js"></script>
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body class="documentation">﻿
+  <div class="body-background">
 <!--FB Comments-->
 <script>
   window.fbAsyncInit = function() {
@@ -47,8 +44,8 @@
   <header class="phonon-bar show-for-tablet-only show-for-tablet-up">
     <h3 class="brand"><a href="/">ubill.github.io</a></h3>
     <ul class="links pull-right">
-      <li><a href="http://phonon.quarkdev.com/components/">UI Components</a></li>
-      <li><a href="./Documentation API _ Start_files/Documentation API _ Start.html">Docs</a></li>
+      <li><a href="/tags.html">Tags</a></li>
+      <li><a href="/categories.html">Categories</a></li>
       <li><a href="/archives.html">Archives</a></li>
     </ul>
   </header>
@@ -64,81 +61,120 @@ ubill.github.io        </a>
   </header>
 
   <div class="container component-container">
-
     <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <div class="fb-share-button" data-layout="button_count"></div>
     <div class="fb-send"></div>
 
 
+<style>
+section#categories .list li a {
+  display: inline;
+  color: #2f84db;
+}
+section#categories .list > a {
+  color: inherit;
+}
+section#categories .list span.title,
+section#categories .list span.body {
+  display: inline;
+}
+
+</style>
     <section id="categories">
-        <h1>All Categories for Ubill's Blog</h1>
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-discoveries">Discoveries <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-discoveries" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-05-28T00:08:00+08:00">Thu 28 May 2015</time></span> <a href="/how-to-know-if-a-request-is-made-to-a-certain-host.html">How To Know If A Request Is Made To A Certain Host?</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-erlang">Erlang <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-erlang" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-07-21T10:37:00+08:00">Tue 21 July 2015</time></span> <a href="/erlang-vs-python-load-testing.html">Erlang vs. Python, Load Testing</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-general">General <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-general" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-07-21T08:25:00+08:00">Tue 21 July 2015</time></span> <a href="/soft-launch-of-this-blog.html">Soft Launch of this Blog!</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-perspective">Perspective <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-perspective" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-05-26T09:16:00+08:00">Tue 26 May 2015</time></span> <a href="/making-mistakes.html">Making Mistakes</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tools">Tools <span class="badge pull-right">6</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-tools" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-11-01T22:49:00+08:00">Sun 01 November 2015</time></span> <a href="/stackedit-revisited.html">StackEdit Revisited</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-05-26T19:26:00+08:00">Tue 26 May 2015</time></span> <a href="/a-landslide-victory-landslide-dzslides.html">A Landslide Victory: Landslide + DZslides</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-05-26T17:02:00+08:00">Tue 26 May 2015</time></span> <a href="/landslide.html">Landslide!</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-05-26T13:15:00+08:00">Tue 26 May 2015</time></span> <a href="/inline-slides-2-pandocs-dzslides.html">Inline Slides 2: Pandocs & DZslides</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-05-26T08:56:00+08:00">Tue 26 May 2015</time></span> <a href="/inline-slides.html">Inline Slides</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2015-05-26T08:35:00+08:00">Tue 26 May 2015</time></span> <a href="/stackedit.html">StackEdit</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h2>All Categories for Ubill's Blog</h2>
+
+        <ul class="list">
+            <a href="/category/discoveries.html">
+              <li>
+                  <span class="padded-list pull-right">1</span>
+                  <span class="padded-list">Discoveries</span>
+              </li>
+            </a>
+            <li class="divider" style="height: auto;">
+              <a href="/how-to-know-if-a-request-is-made-to-a-certain-host.html">
+                  <span class="body">Thu 28 May 2015</span>
+                  <span class="title">How To Know If A Request Is Made To A Certain Host?</span>
+              </a>
+            </li>
+            <a href="/category/erlang.html">
+              <li>
+                  <span class="padded-list pull-right">1</span>
+                  <span class="padded-list">Erlang</span>
+              </li>
+            </a>
+            <li class="divider" style="height: auto;">
+              <a href="/erlang-vs-python-load-testing.html">
+                  <span class="body">Tue 21 July 2015</span>
+                  <span class="title">Erlang vs. Python, Load Testing</span>
+              </a>
+            </li>
+            <a href="/category/general.html">
+              <li>
+                  <span class="padded-list pull-right">1</span>
+                  <span class="padded-list">General</span>
+              </li>
+            </a>
+            <li class="divider" style="height: auto;">
+              <a href="/soft-launch-of-this-blog.html">
+                  <span class="body">Tue 21 July 2015</span>
+                  <span class="title">Soft Launch of this Blog!</span>
+              </a>
+            </li>
+            <a href="/category/perspective.html">
+              <li>
+                  <span class="padded-list pull-right">1</span>
+                  <span class="padded-list">Perspective</span>
+              </li>
+            </a>
+            <li class="divider" style="height: auto;">
+              <a href="/making-mistakes.html">
+                  <span class="body">Tue 26 May 2015</span>
+                  <span class="title">Making Mistakes</span>
+              </a>
+            </li>
+            <a href="/category/tools.html">
+              <li>
+                  <span class="padded-list pull-right">6</span>
+                  <span class="padded-list">Tools</span>
+              </li>
+            </a>
+            <li class="divider" style="height: auto;">
+              <a href="/stackedit-revisited.html">
+                  <span class="body">Sun 01 November 2015</span>
+                  <span class="title">StackEdit Revisited</span>
+              </a>
+            </li>
+            <li class="divider" style="height: auto;">
+              <a href="/a-landslide-victory-landslide-dzslides.html">
+                  <span class="body">Tue 26 May 2015</span>
+                  <span class="title">A Landslide Victory: Landslide + DZslides</span>
+              </a>
+            </li>
+            <li class="divider" style="height: auto;">
+              <a href="/landslide.html">
+                  <span class="body">Tue 26 May 2015</span>
+                  <span class="title">Landslide!</span>
+              </a>
+            </li>
+            <li class="divider" style="height: auto;">
+              <a href="/inline-slides-2-pandocs-dzslides.html">
+                  <span class="body">Tue 26 May 2015</span>
+                  <span class="title">Inline Slides 2: Pandocs & DZslides</span>
+              </a>
+            </li>
+            <li class="divider" style="height: auto;">
+              <a href="/inline-slides.html">
+                  <span class="body">Tue 26 May 2015</span>
+                  <span class="title">Inline Slides</span>
+              </a>
+            </li>
+            <li class="divider" style="height: auto;">
+              <a href="/stackedit.html">
+                  <span class="body">Tue 26 May 2015</span>
+                  <span class="title">StackEdit</span>
+              </a>
+            </li>
+        </ul>
 
     </section>
   </div>
@@ -200,5 +236,6 @@ ubill.github.io        </a>
     </div>
   </footer>
 
+</div>
 </body>
 </html>

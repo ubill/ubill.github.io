@@ -12,18 +12,15 @@
 
   <link rel="icon" type="image/png" href="/static/images/favicon.png" />
 
-  <link rel="stylesheet" href="./theme/lib/phonon/css/main.css">
-  <link rel="stylesheet" href="./theme/lib/phonon/css/phonon.css">
-  <link rel="stylesheet" href="./theme/lib/phonon/css/site.css">
-  <link rel="stylesheet" href="./theme/lib/phonon/css/responsive.css">
-  <link rel="stylesheet" href="./theme/lib/overrides.css">
-  <link rel="stylesheet" href="./theme/lib/overrides-site-only.css">
+  <link rel="stylesheet" href="/theme/lib/phonon/css/phononmain.css">
+  <link rel="stylesheet" href="/theme/lib/phonon/css/responsive.css">
 
-  <link rel="stylesheet" href="./theme/lib/prism.css">
-  <script src="./theme/lib/prism.js"></script>
+  <link rel="stylesheet" href="/theme/lib/prism.css">
+  <script src="/theme/lib/prism.js"></script>
   <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body class="documentation">﻿
+  <div class="body-background">
 <!--FB Comments-->
 <script>
   window.fbAsyncInit = function() {
@@ -47,8 +44,8 @@
   <header class="phonon-bar show-for-tablet-only show-for-tablet-up">
     <h3 class="brand"><a href="/">ubill.github.io</a></h3>
     <ul class="links pull-right">
-      <li><a href="http://phonon.quarkdev.com/components/">UI Components</a></li>
-      <li><a href="./Documentation API _ Start_files/Documentation API _ Start.html">Docs</a></li>
+      <li><a href="/tags.html">Tags</a></li>
+      <li><a href="/categories.html">Categories</a></li>
       <li><a href="/archives.html">Archives</a></li>
     </ul>
   </header>
@@ -64,7 +61,6 @@ ubill.github.io        </a>
   </header>
 
   <div class="container component-container">
-
     <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <div class="fb-share-button" data-layout="button_count"></div>
     <div class="fb-send"></div>
@@ -73,13 +69,13 @@ ubill.github.io        </a>
     <section id="content">
         <article>
             <header class="page-header">
-                <h1>
+                <h2>
                     <a href="/stackedit-revisited.html"
                        rel="bookmark"
                        title="Permalink to StackEdit Revisited">
                         StackEdit Revisited
                     </a>
-                </h1>
+                </h2>
             </header>
             <div class="entry-content">
                 <div class="panel">
@@ -97,7 +93,15 @@ ubill.github.io        </a>
                 </div>
                 <p>Revisiting StackEdit after changing my template,
 the below is a full showcase of the rendering of MarkDown formatted text:</p>
-<h1>Welcome to StackEdit!</h1>
+<p>Testing fenced code block:</p>
+<div class="highlight"><pre>// Foo
+var bar = 0;
+</pre></div>
+
+
+<p>Testing <code>backticks</code>:</p>
+<p>You can insert a table of contents using the marker <code>[TOC]</code>.</p>
+<h4>Welcome to StackEdit!</h4>
 <p>Hey! I'm your first Markdown document in <strong>StackEdit</strong>. Don't delete me, I'm very helpful! I can be recovered anyway in the <strong>Utils</strong> tab of the <i class="icon-cog"></i> <strong>Settings</strong> dialog.</p>
 <hr />
 <h2>Documents</h2>
@@ -345,7 +349,7 @@ cond(no)-&gt;op
 </ul>
 </blockquote>
 <h3>Support StackEdit</h3>
-<p><a href="https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&amp;summary=true"><img alt="" src="https://cdn.monetizejs.com/resources/button-32.png" /></a></p>
+<p><a href="https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&amp;summary=true"><img alt="Some Alt Text" src="https://cdn.monetizejs.com/resources/button-32.png" /></a></p>
 <div class="footnote">
 <hr />
 <ol>
@@ -418,5 +422,6 @@ cond(no)-&gt;op
     </div>
   </footer>
 
+</div>
 </body>
 </html>
