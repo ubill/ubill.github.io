@@ -21,6 +21,8 @@
 </head>
 <body class="documentation">﻿
   <div class="body-background">
+    <div id="popup"></div>
+
 <!--FB Comments-->
 <script>
   window.fbAsyncInit = function() {
@@ -51,7 +53,8 @@
   </header>
 
   <header class="header-bar show-for-phone-only">
-    <button class="btn pull-left icon icon-menu" id="toggle-menu" data-menu-id="site-menu"></button>
+    <button onclick="togglePopup();" class="btn pull-left icon icon-menu" id="toggle-menu" data-popover-id="my-popover"></button>
+
     <div class="center">
       <h1 class="title" data-popover-id="site-menu">
         <a href="/" class="brand">
@@ -66,116 +69,54 @@ ubill.github.io        </a>
     <div class="fb-send"></div>
 
 
-<style>
-section#categories .list li a {
-  display: inline;
-  color: #2f84db;
-}
-section#categories .list > a {
-  color: inherit;
-}
-section#categories .list span.title,
-section#categories .list span.body {
-  display: inline;
-}
-
-</style>
     <section id="categories">
         <h2>All Categories for Ubill's Blog</h2>
 
-        <ul class="list">
-            <a href="/category/discoveries.html">
-              <li>
-                  <span class="padded-list pull-right">1</span>
-                  <span class="padded-list">Discoveries</span>
-              </li>
-            </a>
-            <li class="divider" style="height: auto;">
-              <a href="/how-to-know-if-a-request-is-made-to-a-certain-host.html">
-                  <span class="body">Thu 28 May 2015</span>
-                  <span class="title">How To Know If A Request Is Made To A Certain Host?</span>
-              </a>
-            </li>
-            <a href="/category/erlang.html">
-              <li>
-                  <span class="padded-list pull-right">1</span>
-                  <span class="padded-list">Erlang</span>
-              </li>
-            </a>
-            <li class="divider" style="height: auto;">
-              <a href="/erlang-vs-python-load-testing.html">
-                  <span class="body">Tue 21 July 2015</span>
-                  <span class="title">Erlang vs. Python, Load Testing</span>
-              </a>
-            </li>
-            <a href="/category/general.html">
-              <li>
-                  <span class="padded-list pull-right">1</span>
-                  <span class="padded-list">General</span>
-              </li>
-            </a>
-            <li class="divider" style="height: auto;">
-              <a href="/soft-launch-of-this-blog.html">
-                  <span class="body">Tue 21 July 2015</span>
-                  <span class="title">Soft Launch of this Blog!</span>
-              </a>
-            </li>
-            <a href="/category/perspective.html">
-              <li>
-                  <span class="padded-list pull-right">1</span>
-                  <span class="padded-list">Perspective</span>
-              </li>
-            </a>
-            <li class="divider" style="height: auto;">
-              <a href="/making-mistakes.html">
-                  <span class="body">Tue 26 May 2015</span>
-                  <span class="title">Making Mistakes</span>
-              </a>
-            </li>
-            <a href="/category/tools.html">
-              <li>
-                  <span class="padded-list pull-right">6</span>
-                  <span class="padded-list">Tools</span>
-              </li>
-            </a>
-            <li class="divider" style="height: auto;">
-              <a href="/stackedit-revisited.html">
-                  <span class="body">Sun 01 November 2015</span>
-                  <span class="title">StackEdit Revisited</span>
-              </a>
-            </li>
-            <li class="divider" style="height: auto;">
-              <a href="/a-landslide-victory-landslide-dzslides.html">
-                  <span class="body">Tue 26 May 2015</span>
-                  <span class="title">A Landslide Victory: Landslide + DZslides</span>
-              </a>
-            </li>
-            <li class="divider" style="height: auto;">
-              <a href="/landslide.html">
-                  <span class="body">Tue 26 May 2015</span>
-                  <span class="title">Landslide!</span>
-              </a>
-            </li>
-            <li class="divider" style="height: auto;">
-              <a href="/inline-slides-2-pandocs-dzslides.html">
-                  <span class="body">Tue 26 May 2015</span>
-                  <span class="title">Inline Slides 2: Pandocs & DZslides</span>
-              </a>
-            </li>
-            <li class="divider" style="height: auto;">
-              <a href="/inline-slides.html">
-                  <span class="body">Tue 26 May 2015</span>
-                  <span class="title">Inline Slides</span>
-              </a>
-            </li>
-            <li class="divider" style="height: auto;">
-              <a href="/stackedit.html">
-                  <span class="body">Tue 26 May 2015</span>
-                  <span class="title">StackEdit</span>
-              </a>
-            </li>
-        </ul>
-
+          <h3><a href="/category/discoveries.html">Discoveries <span class="pull-right">[1]</span></a></h3>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-05-28T00:08:00+08:00">Thu 28 May 2015</time></span>
+                <a href="/how-to-know-if-a-request-is-made-to-a-certain-host.html">How To Know If A Request Is Made To A Certain Host?</a>
+            </p>
+          <h3><a href="/category/erlang.html">Erlang <span class="pull-right">[1]</span></a></h3>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-07-21T10:37:00+08:00">Tue 21 July 2015</time></span>
+                <a href="/erlang-vs-python-load-testing.html">Erlang vs. Python, Load Testing</a>
+            </p>
+          <h3><a href="/category/general.html">General <span class="pull-right">[1]</span></a></h3>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-07-21T08:25:00+08:00">Tue 21 July 2015</time></span>
+                <a href="/soft-launch-of-this-blog.html">Soft Launch of this Blog!</a>
+            </p>
+          <h3><a href="/category/perspective.html">Perspective <span class="pull-right">[1]</span></a></h3>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-05-26T09:16:00+08:00">Tue 26 May 2015</time></span>
+                <a href="/making-mistakes.html">Making Mistakes</a>
+            </p>
+          <h3><a href="/category/tools.html">Tools <span class="pull-right">[6]</span></a></h3>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-11-01T22:49:00+08:00">Sun 01 November 2015</time></span>
+                <a href="/stackedit-revisited.html">StackEdit Revisited</a>
+            </p>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-05-26T19:26:00+08:00">Tue 26 May 2015</time></span>
+                <a href="/a-landslide-victory-landslide-dzslides.html">A Landslide Victory: Landslide + DZslides</a>
+            </p>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-05-26T17:02:00+08:00">Tue 26 May 2015</time></span>
+                <a href="/landslide.html">Landslide!</a>
+            </p>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-05-26T13:15:00+08:00">Tue 26 May 2015</time></span>
+                <a href="/inline-slides-2-pandocs-dzslides.html">Inline Slides 2: Pandocs & DZslides</a>
+            </p>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-05-26T08:56:00+08:00">Tue 26 May 2015</time></span>
+                <a href="/inline-slides.html">Inline Slides</a>
+            </p>
+            <p>
+                <span class="categories-timestamp"><time datetime="2015-05-26T08:35:00+08:00">Tue 26 May 2015</time></span>
+                <a href="/stackedit.html">StackEdit</a>
+            </p>
     </section>
   </div>
 
@@ -237,5 +178,22 @@ section#categories .list span.body {
   </footer>
 
 </div>
+    <script type="riot/tag" src="/theme/lib/phonon/js/tags/popup.html"></script>
+    <script src="/theme/lib/phonon/js/riot.compiler.2.2.x.min.js"></script>
+    <script>
+      riot.mount('div#popup', 'popup');
+      var popoverShown = false;
+function togglePopup () {
+  var popover = document.getElementById('my-popover');
+  if (!popoverShown) {
+    popoverShown = true;
+    popover.classList.add('show');
+  }
+  else {
+    popoverShown = false;
+    popover.classList.remove('show');
+  }
+}
+    </script>
 </body>
 </html>

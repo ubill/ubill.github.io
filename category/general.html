@@ -21,6 +21,8 @@
 </head>
 <body class="documentation">﻿
   <div class="body-background">
+    <div id="popup"></div>
+
 <!--FB Comments-->
 <script>
   window.fbAsyncInit = function() {
@@ -51,7 +53,8 @@
   </header>
 
   <header class="header-bar show-for-phone-only">
-    <button class="btn pull-left icon icon-menu" id="toggle-menu" data-menu-id="site-menu"></button>
+    <button onclick="togglePopup();" class="btn pull-left icon icon-menu" id="toggle-menu" data-popover-id="my-popover"></button>
+
     <div class="center">
       <h1 class="title" data-popover-id="site-menu">
         <a href="/" class="brand">
@@ -140,5 +143,22 @@ of this blog.</p>
   </footer>
 
 </div>
+    <script type="riot/tag" src="/theme/lib/phonon/js/tags/popup.html"></script>
+    <script src="/theme/lib/phonon/js/riot.compiler.2.2.x.min.js"></script>
+    <script>
+      riot.mount('div#popup', 'popup');
+      var popoverShown = false;
+function togglePopup () {
+  var popover = document.getElementById('my-popover');
+  if (!popoverShown) {
+    popoverShown = true;
+    popover.classList.add('show');
+  }
+  else {
+    popoverShown = false;
+    popover.classList.remove('show');
+  }
+}
+    </script>
 </body>
 </html>
