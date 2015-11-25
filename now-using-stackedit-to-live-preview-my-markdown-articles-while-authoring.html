@@ -81,8 +81,50 @@ ubill.github.io        </a>
     <div class="fb-send"></div>
 
 
-    <h1>Authors on Ubill's Blog</h1>
-        <li><a href="/author/ubill.html">Ubill</a> (14)</li>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h2>
+                    <a href="/now-using-stackedit-to-live-preview-my-markdown-articles-while-authoring.html"
+                       rel="bookmark"
+                       title="Permalink to Now using StackEdit to Live Preview my Markdown Articles while Authoring.">
+                        Now using StackEdit to Live Preview my Markdown Articles while Authoring.
+                    </a>
+                </h2>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-11-13T18:00:00+08:00"> Fri 13 November 2015</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Well, after 'StackEdit Revisited', now I got StackEdit to show a preview using the actual CSS of my site's theme - as opposed to the default themes of StackEdit, which do not directly reflect how things would look like when coming under the actual CSS of my Pelican site.</p>
+<p>To do that, I followed StackEdit's own guide on 'creating a custom theme', and put in the LESS files that would be going to my Pelican site.</p>
+<ul>
+<li>The first set of CSS generated would be for the StackEdit theme i.e. the preview panel.</li>
+<li>The second set of CSS will be generated from the same LESS source files that StackEdit uses - but with different imports. The output from that will be used in my Pelican theme.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> So it's not actually me bringing my Pelican site's theme to StackEdit - rather, I do that only once right at the start, then later, I will modify the source LESS only on StackEdit - then use lessc to generate the CSS files which I will copy into my Pelican theme.</p>
+</blockquote>
+<p>In other words,</p>
+<blockquote>
+<p>Less sources -&gt; use in StackEdit -&gt; use lessc to generate CSS files -&gt; copy CSS files to Pelican theme.</p>
+</blockquote>
+<p>So there's only one source of truth, one place to edit and maintain.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
   </div>
 
 

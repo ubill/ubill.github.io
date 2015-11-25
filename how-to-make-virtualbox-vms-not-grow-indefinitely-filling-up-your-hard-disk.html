@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ubill's Blog</title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="description" content="Ubill's Tech Adventures.">
+  <meta name="keywords" content="">
+  <meta name="author" content="U Bill Lee">
+
+  <link rel="icon" type="image/png" href="/static/images/favicon.png" />
+
+  <link rel="stylesheet" href="/theme/lib/phonon/css/phononmain.css">
+  <link rel="stylesheet" href="/theme/lib/phonon/css/responsive.css">
+  <link rel="stylesheet" href="/theme/pelican-override.css">
+
+  <link rel="stylesheet" href="/theme/lib/prism.css">
+  <script src="/theme/lib/prism.js"></script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body class="documentation">﻿
+  <div class="body-background">
+    <div id="popup"></div>
+
+<!--FB Comments-->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1659123174308004',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="fb-root"></div>
+
+  <header class="phonon-bar show-for-tablet-only show-for-tablet-up">
+    <h3 class="brand"><a href="/">ubill.github.io</a></h3>
+    <ul class="links pull-right">
+      <li><a href="/tags.html">Tags</a></li>
+      <li><a href="/categories.html">Categories</a></li>
+      <li><a href="/archives.html">Archives</a></li>
+    </ul>
+  </header>
+
+  <header class="header-bar show-for-phone-only">
+    <button onclick="togglePopup();" class="btn pull-left icon icon-menu" id="toggle-menu" data-popover-id="my-popover"></button>
+
+    <div class="center">
+      <h1 class="title" data-popover-id="site-menu">
+        <a href="/" class="brand">
+ubill.github.io        </a>
+      </h1>
+    </div>
+  </header>
+
+  <div class="container component-container">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- First Ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2901265106763473"
+         data-ad-slot="5343392540"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    <div class="fb-share-button" data-layout="button_count"></div>
+    <div class="fb-send"></div>
+
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h2>
+                    <a href="/how-to-make-virtualbox-vms-not-grow-indefinitely-filling-up-your-hard-disk.html"
+                       rel="bookmark"
+                       title="Permalink to How To Make VirtualBox VMs Not Grow Indefinitely Filling Up Your Hard Disk">
+                        How To Make VirtualBox VMs Not Grow Indefinitely Filling Up Your Hard Disk
+                    </a>
+                </h2>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-11-13T18:10:00+08:00"> Fri 13 November 2015</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>As we know, VMs have an extremely annoying habit of ever-expanding on your host's disk space even if you delete files inside the guest.</p>
+<h3>Update:</h3>
+<p>I have since used the "make a copy of empty hard disks" <strong>Method 2</strong>, and it worked!</p>
+<p>So the TLDR is:</p>
+<ul>
+<li>when you are installing a fresh VM, make multiple hard disks and keep backup of the "empty" hard disks, and even better, <strong>zip</strong> them up. (effectiveness expressed in pictures, later)</li>
+<li>if you already have running VMs, and want to recover the space, then no choice, boot into LiveCD and use zerofree everywhere. But after that - <em>also make a copy of the empty hard disks and zip them up!</em></li>
+</ul>
+<p>Then you can just anytime shutdown your VM can copy the empty hard disk files overwriting the ones filled with crap for swap and /var/log.</p>
+<p>To help you visualize, pictures below:</p>
+<p><a class="a-img" target="_blank" href="/static/images/vm-hard-disks/2015-11-25_132210-debian7-hard-disk-files.jpg"><img alt="debian7-hard-disk-files" src="/static/images/vm-hard-disks/2015-11-25_132210-debian7-hard-disk-files.jpg" /></a>
+Debian 7 VM hard disk files (Originally main hard disk was about 30 G before cleaning)</p>
+<p><a class="a-img" target="_blank" href="/static/images/vm-hard-disks/2015-11-25_132217-debian7-empty-hard-disks-zipped.jpg"><img alt="debian7-empty-hard-disks-zipped" src="/static/images/vm-hard-disks/2015-11-25_132217-debian7-empty-hard-disks-zipped.jpg" /></a>
+Debian 7, the crap hard disks zipped up... note, <strong>2 kb</strong> for the "empty swap hard disk"!</p>
+<p><a class="a-img" target="_blank" href="/static/images/vm-hard-disks/2015-11-25_132225-debian8-hard-disk-files.jpg"><img alt="debian8-hard-disk-files" src="/static/images/vm-hard-disks/2015-11-25_132225-debian8-hard-disk-files.jpg" /></a>
+Debian 8 hard disk files</p>
+<p><a class="a-img" target="_blank" href="/static/images/vm-hard-disks/2015-11-25_132230-debian8-empty-hard-disks-zipped.jpg"><img alt="debian8-empty-hard-disks-zipped" src="/static/images/vm-hard-disks/2015-11-25_132230-debian8-empty-hard-disks-zipped.jpg" /></a>
+Debian 8 zipped up crap hard disks - 181 kb!</p>
+<p><a class="a-img" target="_blank" href="/static/images/vm-hard-disks/2015-11-25_132302-startup-debian7-vm.jpg"><img alt="startup-debian7-vm" src="/static/images/vm-hard-disks/2015-11-25_132302-startup-debian7-vm.jpg" /></a>
+Debian 7 VM hard disks setup</p>
+<p><a class="a-img" target="_blank" href="/static/images/vm-hard-disks/2015-11-25_132310-startup-debian8-vm.jpg"><img alt="startup-debian8-vm" src="/static/images/vm-hard-disks/2015-11-25_132310-startup-debian8-vm.jpg" /></a>
+Debian 8 VM hard disks setup</p>
+<h3>End update.</h3>
+<h3>Original post follows:</h3>
+<p>For me after spending some time, there are Two Things that you can do about it:</p>
+<ol>
+<li>Boot into a LiveCD, use zerofree on the partitions, then use VBoxManage modifyhd --compact on the .vdi files. (10 GB can shrink to 5MB.)</li>
+<li>Even better, in conjunction with that - <strong>use multiple .vdi files</strong>, and let your VM use multiple hard disks. Who says you can only have one...</li>
+</ol>
+<blockquote>
+<p>By doing that, 30 GBs of space taken up by the VM can be shrunk to 10 GB (or however much space your guest VM is actually taking up. A Debian with KDE could be about 4.8 GB.)</p>
+</blockquote>
+<p>Another tip to remember:</p>
+<blockquote>
+<p>When using your guest, always download stuff into the VirtualBox's <strong><em>Shared Folder</em></strong>. That way, you'll avoid inadvertently expanding the file size of your .vdi.</p>
+</blockquote>
+<p>The more interesting point is the 2nd one. Why and How does that help?</p>
+<p>You put your swap, /var/log, and other partitions that expand and contract (have temp stuff deleted) on different .vdi disks. But before you do that, save backups of these disks into another folder. The idea is that: when the in-use .vdis expand to an unearthly size like 10G, overwrite them with the 'empty backup' .vdi files.</p>
+<h3>Here are the exact steps I used for my specific setup:</h3>
+<p>(On my Debian8.1 VM, where everything is on LVM, even the swap partition, and all the individual virtual hard disks)</p>
+<div class="highlight"><pre>    sudo apt-get update &amp;&amp; sudo apt-get install -y gparted lvm2 system-config-lvm
+    sudo gparted
+    sudo system-config-lvm
+    ls -lah /dev/mapper
+    sudo vgchange -a y
+        sudo zerofree -v /dev/mapper/debian810--vg-root
+        sudo zerofree -v /dev/mapper/debian810--vg-home
+        sudo zerofree -v /dev/mapper/debian810--vg-var
+        sudo zerofree -v /dev/mapper/debian810--vg-tmp
+        sudo zerofree -v /dev/mapper/debian810--vg-LV_VAR_LOG
+        sudo dd if=/dev/zero of=/dev/mapper/debian810--vg-LV_SWAP bs=1M
+        sync
+        REMOVE CD FROM DRIVE.
+
+    cd &quot;c:\Program Files\Oracle\VirtualBox&quot;
+        VBoxManage.exe modifyhd c:\dev\vm\VIRTUALBOX\debian810\debian810_LV_SWAP.vdi --compact
+        VBoxManage.exe modifyhd c:\dev\vm\VIRTUALBOX\debian810\debian810_LV_VAR_LOG.vdi --compact
+        VBoxManage.exe modifyhd c:\dev\vm\VIRTUALBOX\debian810\debian810.vdi --compact
+    COPY TO SAVED_EMPTY_HARDDISKS/          LV_SWAP and LV_VAR_LOG.vdis.
+    DONE.
+</pre></div>
+
+
+<p>And here's what I used on my debian7 system:</p>
+<div class="highlight"><pre>sudo zerofree -v /dev/sda7
+sudo zerofree -v /dev/sda6
+sudo zerofree -v /dev/sda3
+sudo zerofree -v /dev/sda1
+
+sudo vgchange -a y
+sudo zerofree -v /dev/mapper/debian750-LV_MYTMP
+sudo zerofree -v /dev/mapper/debian750-LV_VAR_LOG
+sudo zerofree -v /dev/mapper/debian750-root
+sudo dd if=/dev/zero of=/dev/sdb1 bs=1M
+sync
+
+then modifyhd --compact on the 4 hard disks, the 3 external hard disks take up 300 MB now.
+Because I did not backup them at the start while they were still fresh.
+then zip up the swap, tmp and var_log hard disks.
+* compressed, these take up 2 MB disk space only!
+</pre></div>
+
+
+<h3>Method 2:</h3>
+<p>Since you are using a VM and all hard disks are virtual and you can add and remove hard drives as you please, you can:</p>
+<ul>
+<li>forget about using LVM altogether, just have regular partitions for hard drives, <em>unless</em> you specifically want to learn about how to use and maintain LVM, as I have;</li>
+<li>It will then look like <code>sudo zerofree -v /dev/sda7
+sudo zerofree -v /dev/sda6
+sudo zerofree -v /dev/sda3</code>
+ without needing to <code>vgchange -a y</code>, which is much more simpler.</li>
+<li>Use LVM, but <strong>don't</strong> put / /home /var /tmp/ etc in separate partitions, <strong>just have everything in one partition</strong> except for SWAP (which can be on LVM, or non-LVM, but on separate hard disk i.e. separate .vdi file.)</li>
+<li>The reason for this is so that you then don't have to <strong>zerofree so many LVs individually</strong> as you saw in my specific setup; you will just have to the one <code>sudo zerofree -v /dev/mapper/debian810--vg-root</code> and <code>dd if</code> the <code>SWAP</code> whereever it is.</li>
+</ul>
+<p>Right now I have the 'empty disks' of 5 MB .. 30 MB .. size (5 MB for 'swap' type, 30 MB for 'ext4' type), I have not yet, at time of writing, tried just simply overwriting the in-use .vdis with their 'empty backups', because: so far I just recently used 1) which is to zerofree-modifyhd those disks. So at this moment my disks have not yet become so big for me to actually want to do 2) yet and report the findings here.</p>
+<p>Anyway, I'll remark on the effectiveness of 2) in a future post when I get to doing it.</p>
+<p>Now, talking about copying over .vdis, there may or may not be those "Virtualbox disk UUID problems"... but I expect not, and even if so, doesn't seem to be too hard to solve. But, as they say... <strong><em>that is left as an exercise to the reader</em></strong>.</p>
+<p>Share your experience here if it helped you! :)</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+  </div>
+
+
+
+
+
+
+
+
+  <footer class="page-footer">
+    <div class="container">
+      <h3>Comments</h3>
+      <div class="fb-comments" data-width="630" data-numposts="10"></div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'ubill';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      <!-- Disqus comment count -->
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES * * */
+          var disqus_shortname = 'ubill';
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function () {
+              var s = document.createElement('script'); s.async = true;
+              s.type = 'text/javascript';
+              s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+              (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+          }());
+      </script><!-- Analytics -->
+      <script type="text/javascript">
+          var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+          document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+          try {
+              var pageTracker = _gat._getTracker("UA-62650563-1");
+              pageTracker._trackPageview();
+          } catch(err) {}
+      </script>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2015 Ubill
+      </div>
+    </div>
+  </footer>
+
+</div>
+    <script type="riot/tag" src="/theme/lib/phonon/js/tags/popup.html"></script>
+    <script src="/theme/lib/phonon/js/riot.compiler.2.2.x.min.js"></script>
+    <script>
+      riot.mount('div#popup', 'popup');
+      var popoverShown = false;
+function togglePopup () {
+  var popover = document.getElementById('my-popover');
+  if (!popoverShown) {
+    popoverShown = true;
+    popover.classList.add('show');
+  }
+  else {
+    popoverShown = false;
+    popover.classList.remove('show');
+  }
+}
+    </script>
+</body>
+</html>
